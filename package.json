@@ -1,0 +1,42 @@
+{
+  "name": "@dynamic-glsp/protocol",
+  "version": "1.0.1",
+  "description": "Custom GLSP instance for dynamic model language support. This is the protocol.",
+  "author": "Giuliano Marinelli",
+  "license": "MIT",
+  "main": "lib/index",
+  "types": "lib/index",
+  "files": [
+    "src",
+    "lib",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf lib && tsc -b",
+    "watch": "tsc -w",
+    "prepack": "npm run build",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "@eclipse-glsp/protocol": ">=2.3.0",
+    "@eclipse-glsp/server": ">=2.3.0"
+  },
+  "homepage": "https://github.com/giuliano-marinelli/dynamic-glsp-protocol#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giuliano-marinelli/dynamic-glsp-protocol"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
