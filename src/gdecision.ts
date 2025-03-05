@@ -1,6 +1,6 @@
-import { GModelElement } from "@eclipse-glsp/server";
+import { GModelElement } from '@eclipse-glsp/server';
 
-import { DynamicTypes } from "./types";
+import { DynamicTypes } from './types';
 
 export interface BooleanCondition {
   left: string | number | boolean; // string can be a variable name

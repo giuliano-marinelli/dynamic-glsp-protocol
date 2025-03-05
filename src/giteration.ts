@@ -1,6 +1,6 @@
-import { GModelElement } from "@eclipse-glsp/server";
+import { GModelElement } from '@eclipse-glsp/server';
 
-import { DynamicTypes } from "./types";
+import { DynamicTypes } from './types';
 
 export class GIteration extends GModelElement {
   override type = DynamicTypes.ITERATION;
