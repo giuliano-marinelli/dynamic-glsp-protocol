@@ -6,7 +6,6 @@ import { Language, LanguageElement } from '../language';
  This RequestAction and ResponseActions interfaces must be in a shared project to be used in both the client and server.
  This are shared by: DynamicStartup and DynamicLoadLanguageSpecificationActionHandler
 */
-
 export interface LoadLanguageSpecificationAction extends RequestAction<ReadyLanguageSpecificationAction> {
   kind: typeof LoadLanguageSpecificationAction.KIND;
   language: string | Language | LanguageElement;
@@ -38,6 +37,7 @@ export namespace LoadLanguageSpecificationAction {
 
 export interface ReadyLanguageSpecificationAction extends ResponseAction {
   kind: typeof ReadyLanguageSpecificationAction.KIND;
+  language: Language;
 }
 
 export namespace ReadyLanguageSpecificationAction {
@@ -47,10 +47,11 @@ export namespace ReadyLanguageSpecificationAction {
     return Action.hasKind(object, KIND);
   }
 
-  export function create(options: { responseId?: string } = {}): ReadyLanguageSpecificationAction {
+  export function create(language: Language, options: { responseId?: string } = {}): ReadyLanguageSpecificationAction {
     return {
       kind: KIND,
       responseId: '',
+      language,
       ...options
     };
   }

@@ -7,6 +7,11 @@ export enum LanguageElementType {
   EDGE = 'edge'
 }
 
+export interface LanguageConstraint {
+  source: string[];
+  target: string[];
+}
+
 export interface LanguageElement {
   type: LanguageElementType;
   name: string;
@@ -26,6 +31,7 @@ export interface LanguageEdge extends LanguageElement {
   type: LanguageElementType.EDGE;
   gModel: GEdgeSchema;
   aModel: AModelRootSchema;
+  constraints: LanguageConstraint[];
 }
 
 export interface Language {
